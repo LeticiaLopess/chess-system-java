@@ -14,7 +14,7 @@ public class ChessMatch {
 		initialSetup();
 	}
 	
-	public ChessPiece[][] getPieces() {
+	public ChessPiece[][] getPieces() { // pega a posição da linha e coluna da jogada
 		ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];
 		
 		for (int i=0; i<board.getRows(); i++) {
@@ -27,7 +27,7 @@ public class ChessMatch {
 	}
 	
 	private void initialSetup() {
-		board.placePiece(new Rook(board, Color.WHITE), new Position(2, 1));
+		board.placePiece(new Rook(board, Color.WHITE), new Position(9, 1));
 		board.placePiece(new King(board, Color.BLACK), new Position(0, 4));
 
 	}
