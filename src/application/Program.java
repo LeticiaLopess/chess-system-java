@@ -21,7 +21,7 @@ public class Program {
 			try {
 				
 				UI.clearScreen();
-				UI.printBoard(chessMatch.getPieces()); // UI -> User Interface // aqui formo o tabuleiro visualmente
+				UI.printMatch(chessMatch); // UI -> User Interface // aqui formo o tabuleiro visualmente
 				System.out.println(); // pulo uma linha
 				System.out.print("Source: ");
 				ChessPosition source = UI.readChessPosition(sc);
