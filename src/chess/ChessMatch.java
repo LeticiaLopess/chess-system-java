@@ -31,6 +31,7 @@ public class ChessMatch {
 		Position source = sourcePosition.toPosition();
 		Position target = targetPosition.toPosition();
 		validateSourcePosition(source);
+		validateTargetPosition(source, target);
 		Piece capturedPiece = makeMove(source,target);
 		return (ChessPiece)capturedPiece; // Downcasting (conversão de um tipo de referência mais amplo para um tipo de referência mais específico [ChessPiece extends Piece]) de Piece para ChessPiece
 	}
@@ -50,6 +51,12 @@ public class ChessMatch {
 		
 		if (!board.piece(position).isThereAnyPossibleMove()) {
 			throw new ChessException("There is no possible moves for the chosen piece");
+		}
+	}
+	
+	private void validateTargetPosition(Position source, Position target) {
+		if (!board.piece(source).possibleMove(target)); { // se pra peça de origem a posição de destino não é uma posição possível, significa que eu não posso mexer pra lá
+			throw new ChessException("The chosen piece can't move to target position");
 		}
 	}
 	
